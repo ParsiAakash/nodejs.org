@@ -201,17 +201,21 @@ Organize imports in this order:
 
 1. Node.js built-in modules
 2. External library imports (Including `@node-core/*`)
-3. Relative imports (`./*`, `../*`, `#specifier/`)
-4. Type-only imports at the end of each given section
+3. Internal imports (such as #specifier/*)
+4. Object imports
+5. Type-only imports
+6. Relative imports (`./*`, `../*`)
+7. Index imports
 
 ```tsx
 import { readFile } from 'node:fs/promises';
 
 import { SomeComponent } from '@node-core/ui-components/Common/SomeComponent';
+
+import type { MyComponentProps } from './types';
 import type { FC } from 'react';
 
 import { myHook } from '../hooks/myHook';
-import type { MyComponentProps } from './types';
 ```
 
 ## Documentation Standards
